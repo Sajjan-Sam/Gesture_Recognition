@@ -1,0 +1,12 @@
+{
+    "total_rows": 749,
+    "unique_subjects_total": 107,
+    "subjects_by_distance": {
+        "4_feet": 34,
+        "6_feet": 35,
+        "8_feet": 38
+    },
+    "subjects_with_all_7_gestures": 107,
+    "subjects_missing_any_gesture": 0,
+    "output_file": "/data/Sajjan_Singh/gesture_recognition/data/processed/manifests/paired_manifest_with_subjects.csv"
+}

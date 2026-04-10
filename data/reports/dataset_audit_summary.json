@@ -1,0 +1,16 @@
+{
+    "total_videos": 1498,
+    "rgb_videos": 749,
+    "nir_videos": 749,
+    "unique_subjects": 0,
+    "unique_gestures": 7,
+    "unique_distances": 3,
+    "unreadable_videos": 0,
+    "paired_samples": 91,
+    "rgb_without_pair": 658,
+    "nir_without_pair": 658,
+    "mean_rgb_duration": 5.564527147307521,
+    "mean_nir_duration": 5.405903871829105,
+    "mean_rgb_fps": 30.10687889656158,
+    "mean_nir_fps": 24.787185240332327
+}

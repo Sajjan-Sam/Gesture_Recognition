@@ -1,0 +1,69 @@
+# =========================
+# DATASETS / LARGE FILES
+# =========================
+data/raw/
+data/processed/frames/
+data/processed/frames_trimmed/
+data/processed/clips/
+data/stylegan3_zip/
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.rar
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.pkl
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.npz
+*.npy
+*.parquet
+
+# =========================
+# TRAINING OUTPUTS
+# =========================
+checkpoints/
+results/
+logs/
+wandb/
+runs/
+outputs/
+experiments/
+
+# =========================
+# PYTHON / NOTEBOOK
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+.python-version
+.venv/
+venv/
+env/
+
+# =========================
+# IDE / OS
+# =========================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# =========================
+# OPTIONAL: KEEP EMPTY FOLDERS TRACKABLE
+# =========================
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/processed/manifests/.gitkeep
+!data/processed/splits/.gitkeep
+!data/reports/.gitkeep
+!checkpoints/.gitkeep
+!results/.gitkeep
+!logs/.gitkeep

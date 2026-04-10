@@ -1,0 +1,23 @@
+{
+    "total_pairs_processed": 749,
+    "total_summary_rows": 2247,
+    "trim_start_sec": 1.0,
+    "trim_end_sec": 1.0,
+    "use_rgb_background_removal": true,
+    "status_counts": {
+        "success": 2247
+    },
+    "frames_by_modality": {
+        "NIR": 63449,
+        "RGB": 82185,
+        "RGB_BGREM": 82185
+    },
+    "avg_frames_per_video_by_modality": {
+        "NIR": 84.71,
+        "RGB": 109.73,
+        "RGB_BGREM": 109.73
+    },
+    "elapsed_seconds": 35160.15,
+    "elapsed_minutes": 586.0,
+    "summary_csv": "/data/Sajjan_Singh/gesture_recognition/data/processed/manifests/frame_extraction_trimmed_summary.csv"
+}

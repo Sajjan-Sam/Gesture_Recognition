@@ -1,0 +1,167 @@
+{
+    "manifest_total_valid_pairs": 749,
+    "unique_subjects": 107,
+    "unique_gestures": [
+        "doctor",
+        "emergency",
+        "fire",
+        "help",
+        "robbery",
+        "sit_down",
+        "stand_up"
+    ],
+    "unique_distances": [
+        "4_feet",
+        "6_feet",
+        "8_feet"
+    ],
+    "protocol_debug": {
+        "train_count": 525,
+        "val_count": 77,
+        "test_count": 147,
+        "train_file": "/data/Sajjan_Singh/gesture_recognition/data/processed/splits/protocol_debug_train.csv",
+        "val_file": "/data/Sajjan_Singh/gesture_recognition/data/processed/splits/protocol_debug_val.csv",
+        "test_file": "/data/Sajjan_Singh/gesture_recognition/data/processed/splits/protocol_debug_test.csv",
+        "note": "For debugging/training pipeline only. Not the main benchmark."
+    },
+    "protocol_A": {
+        "train_count": 525,
+        "val_count": 77,
+        "test_count": 147,
+        "train_subjects": 75,
+        "val_subjects": 11,
+        "test_subjects": 21,
+        "subject_overlap_train_val": 0,
+        "subject_overlap_train_test": 0,
+        "subject_overlap_val_test": 0,
+        "train_file": "/data/Sajjan_Singh/gesture_recognition/data/processed/splits/protocol_A_train.csv",
+        "val_file": "/data/Sajjan_Singh/gesture_recognition/data/processed/splits/protocol_A_val.csv",
+        "test_file": "/data/Sajjan_Singh/gesture_recognition/data/processed/splits/protocol_A_test.csv"
+    },
+    "protocol_B_splits": [
+        {
+            "split_name": "Protocol B: train 4 -> test 8",
+            "train_distances": [
+                "4_feet"
+            ],
+            "test_distances": [
+                "8_feet"
+            ],
+            "train_count": 238,
+            "test_count": 266,
+            "train_subjects": 34,
+            "test_subjects": 38,
+            "train_path": "/data/Sajjan_Singh/gesture_recognition/data/processed/splits/protocol_B_train_4_test_8.csv",
+            "test_path": "/data/Sajjan_Singh/gesture_recognition/data/processed/splits/protocol_B_test_8.csv"
+        },
+        {
+            "split_name": "Protocol B: train 8 -> test 4",
+            "train_distances": [
+                "8_feet"
+            ],
+            "test_distances": [
+                "4_feet"
+            ],
+            "train_count": 266,
+            "test_count": 238,
+            "train_subjects": 38,
+            "test_subjects": 34,
+            "train_path": "/data/Sajjan_Singh/gesture_recognition/data/processed/splits/protocol_B_train_8_test_4.csv",
+            "test_path": "/data/Sajjan_Singh/gesture_recognition/data/processed/splits/protocol_B_test_4.csv"
+        },
+        {
+            "split_name": "Protocol B: train 4+6 -> test 8",
+            "train_distances": [
+                "4_feet",
+                "6_feet"
+            ],
+            "test_distances": [
+                "8_feet"
+            ],
+            "train_count": 483,
+            "test_count": 266,
+            "train_subjects": 69,
+            "test_subjects": 38,
+            "train_path": "/data/Sajjan_Singh/gesture_recognition/data/processed/splits/protocol_B_train_4_6_test_8.csv",
+            "test_path": "/data/Sajjan_Singh/gesture_recognition/data/processed/splits/protocol_B_test_8_from_4_6.csv"
+        },
+        {
+            "split_name": "Protocol B: train 6+8 -> test 4",
+            "train_distances": [
+                "6_feet",
+                "8_feet"
+            ],
+            "test_distances": [
+                "4_feet"
+            ],
+            "train_count": 511,
+            "test_count": 238,
+            "train_subjects": 73,
+            "test_subjects": 34,
+            "train_path": "/data/Sajjan_Singh/gesture_recognition/data/processed/splits/protocol_B_train_6_8_test_4.csv",
+            "test_path": "/data/Sajjan_Singh/gesture_recognition/data/processed/splits/protocol_B_test_4_from_6_8.csv"
+        },
+        {
+            "split_name": "Protocol B: train 4+8 -> test 6",
+            "train_distances": [
+                "4_feet",
+                "8_feet"
+            ],
+            "test_distances": [
+                "6_feet"
+            ],
+            "train_count": 504,
+            "test_count": 245,
+            "train_subjects": 72,
+            "test_subjects": 35,
+            "train_path": "/data/Sajjan_Singh/gesture_recognition/data/processed/splits/protocol_B_train_4_8_test_6.csv",
+            "test_path": "/data/Sajjan_Singh/gesture_recognition/data/processed/splits/protocol_B_test_6_from_4_8.csv"
+        },
+        {
+            "split_name": "Protocol B reference: train 4 -> test 4",
+            "train_distances": [
+                "4_feet"
+            ],
+            "test_distances": [
+                "4_feet"
+            ],
+            "train_count": 238,
+            "test_count": 238,
+            "train_subjects": 34,
+            "test_subjects": 34,
+            "train_path": "/data/Sajjan_Singh/gesture_recognition/data/processed/splits/protocol_B_train_4_test_4.csv",
+            "test_path": "/data/Sajjan_Singh/gesture_recognition/data/processed/splits/protocol_B_test_4_same.csv"
+        },
+        {
+            "split_name": "Protocol B reference: train 6 -> test 6",
+            "train_distances": [
+                "6_feet"
+            ],
+            "test_distances": [
+                "6_feet"
+            ],
+            "train_count": 245,
+            "test_count": 245,
+            "train_subjects": 35,
+            "test_subjects": 35,
+            "train_path": "/data/Sajjan_Singh/gesture_recognition/data/processed/splits/protocol_B_train_6_test_6.csv",
+            "test_path": "/data/Sajjan_Singh/gesture_recognition/data/processed/splits/protocol_B_test_6_same.csv"
+        },
+        {
+            "split_name": "Protocol B reference: train 8 -> test 8",
+            "train_distances": [
+                "8_feet"
+            ],
+            "test_distances": [
+                "8_feet"
+            ],
+            "train_count": 266,
+            "test_count": 266,
+            "train_subjects": 38,
+            "test_subjects": 38,
+            "train_path": "/data/Sajjan_Singh/gesture_recognition/data/processed/splits/protocol_B_train_8_test_8.csv",
+            "test_path": "/data/Sajjan_Singh/gesture_recognition/data/processed/splits/protocol_B_test_8_same.csv"
+        }
+    ],
+    "protocol_C_note": "A distinct Protocol C (subject-independent + cross-distance) is not separately created here, because reconstructed subject IDs are already distance-specific. In this dataset, Protocol B cross-distance evaluation is effectively cross-subject as well."
+}

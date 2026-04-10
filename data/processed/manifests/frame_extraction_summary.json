@@ -1,0 +1,17 @@
+{
+    "total_input_pairs": 10,
+    "total_tasks": 20,
+    "rgb_tasks": 10,
+    "nir_tasks": 10,
+    "status_counts": {
+        "success_gpu": 20
+    },
+    "gpu_decode_used_count": 20,
+    "total_frames_rgb": 1747,
+    "total_frames_nir": 1345,
+    "avg_frames_rgb": 174.7,
+    "avg_frames_nir": 134.5,
+    "elapsed_seconds": 14.29,
+    "elapsed_minutes": 0.24,
+    "summary_csv": "/data/Sajjan_Singh/gesture_recognition/data/processed/manifests/frame_extraction_summary.csv"
+}
