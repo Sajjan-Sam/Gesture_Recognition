@@ -1,0 +1,24 @@
+name: Sync fusion_split.py
+
+on:
+  workflow_dispatch:   # allows manual run
+  schedule:
+    - cron: '0 0 * * *'   # runs daily at midnight
+
+jobs:
+  sync-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout collaborator repo
+        uses: actions/checkout@v3
+
+      - name: Download fusion_split.py
+        run: curl -o pycode/fusion_split.py https://raw.githubusercontent.com/bhashkar1/DL-Project1/main/pycode/fusion_split.py
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git add pycode/fusion_split.py
+          git commit -m "Sync fusion_split.py from DL-Project1"
+          git push
