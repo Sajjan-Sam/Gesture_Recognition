@@ -1,4 +1,4 @@
-# 🤲 Gesture Recognition — RGB + Thermal Dual-Modality Pipeline
+#  Gesture Recognition — RGB + Thermal Dual-Modality Pipeline
 
 A complete research pipeline for **multi-modality hand gesture recognition** using paired RGB and thermal video data captured at three distances (4 ft, 6 ft, 8 ft) and across day/night conditions. The pipeline covers everything from raw data auditing to fusion model training, result collection, and paper-ready figures.
 
