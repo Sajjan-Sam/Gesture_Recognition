@@ -1,4 +1,4 @@
-#  Gesture Recognition — RGB + Thermal Dual-Modality Pipeline
+#  Gesture Recognition   RGB + Thermal Dual-Modality Pipeline
 
 A complete research pipeline for **multi-modality hand gesture recognition** using paired RGB and thermal video data captured at three distances (4 ft, 6 ft, 8 ft) and across day/night conditions. The pipeline covers everything from raw data auditing to fusion model training, result collection, and paper-ready figures.
 
@@ -70,7 +70,7 @@ Follow this exact sequence to reproduce the full pipeline from raw data to paper
 
 ---
 
-### PHASE 1 — Data Preparation
+### PHASE 1   Data Preparation
 
 #### `01_dataset_audit.ipynb`
 **Purpose:** Inspect the raw dataset structure.  
@@ -104,7 +104,7 @@ Follow this exact sequence to reproduce the full pipeline from raw data to paper
 
 ---
 
-### PHASE 2 — Baseline Training (Single Modality)
+### PHASE 2   Baseline Training (Single Modality)
 
 #### `Pre_train_model.py`
 **Purpose:** Frame-level pretrained CNN baseline (no temporal modelling).  
@@ -121,8 +121,8 @@ python Pre_train_model.py
 
 #### `05_baseline_rgb.ipynb` / `05_baseline_rgb1.ipynb`
 **Purpose:** Interactive notebook versions of the RGB baseline training.  
-- `05_baseline_rgb.ipynb` — full run with training curves and confusion matrices.  
-- `05_baseline_rgb1.ipynb` — variant experiment (alternative hyperparameters or augmentation).  
+- `05_baseline_rgb.ipynb`   full run with training curves and confusion matrices.  
+- `05_baseline_rgb1.ipynb`   variant experiment (alternative hyperparameters or augmentation).  
 - Both use RGB frames and test across the 21 distance protocols.
 
 #### `06_baseline_nir.ipynb`
@@ -131,11 +131,11 @@ python Pre_train_model.py
 
 ---
 
-### PHASE 3 — Sequential Model Training (CNN + RNN)
+### PHASE 3   Sequential Model Training (CNN + RNN)
 
 #### `all_lstm_final.py`
 **Purpose:** Exhaustive CNN-LSTM sweep over all model-distance-depth combinations.  
-- Architecture: `CNN_LSTM` — CNN feature extractor (timm) → LSTM (1–5 layers, hidden=256) → FC.  
+- Architecture: `CNN_LSTM`   CNN feature extractor (timm) → LSTM (1–5 layers, hidden=256) → FC.  
 - Backbones: ResNet-50, EfficientNet-B0, MobileNetV3-Small, ViT-B/16, ConvNeXt-Tiny.  
 - Data root: `thermal_split_new/`, Sequence length: 10 frames, Batch: 8.  
 - Trains across 7 train-distance combos × 3 test distances × 5 LSTM depths = **525 runs**.  
@@ -161,7 +161,7 @@ python all_gru.py
 
 ---
 
-### PHASE 4 — Advanced Single-Stream Models (GestFormer + ConvNeXtGRU)
+### PHASE 4   Advanced Single-Stream Models (GestFormer + ConvNeXtGRU)
 
 #### `splitB-1.py`
 **Purpose:** Generate the 21-protocol manifest and split CSVs for the advanced pipeline.  
@@ -176,8 +176,8 @@ python splitB-1.py
 
 #### `modelB.py`
 **Purpose:** Single-stream benchmark with two advanced architectures.  
-- **GestFormerFusion** — EfficientNet-B0 spatial encoder → Projection + LayerNorm → [CLS] token → Transformer encoder (CM-Diff / CFC inspired) → MLP head.  
-- **ConvNeXtTinyGRU** — ConvNeXt-Tiny (60% frozen) → 1-layer GRU → FC.  
+- **GestFormerFusion**   EfficientNet-B0 spatial encoder → Projection + LayerNorm → [CLS] token → Transformer encoder (CM-Diff / CFC inspired) → MLP head.  
+- **ConvNeXtTinyGRU**   ConvNeXt-Tiny (60% frozen) → 1-layer GRU → FC.  
 - Reads `manifests/paired_manifest.csv` and the 21 protocol splits.  
 - Modalities: `rgb`, `thermal`, `rgb_bgrem` (resolved via `get_frame_dir()`).  
 - Training: AdamW + warmup cosine LR schedule + AMP (FP16) + OOM retry logic.  
@@ -196,7 +196,7 @@ python modelB.py
 
 ---
 
-### PHASE 5 — Dual-Stream Fusion Models
+### PHASE 5   Dual-Stream Fusion Models
 
 #### `fusion_splitB.py` / `fusion_splitB-1.py`
 **Purpose:** Generate fusion-specific manifests and split CSVs.  
@@ -214,8 +214,8 @@ python fusion_splitB.py
 
 #### `fusion_modelB.py`
 **Purpose:** Full dual-stream fusion benchmark (84 total runs).  
-- **GestFormerFusion** — two independent EfficientNet-B0 encoders (RGB + Thermal) → bidirectional cross-modal attention (RGB↔Thermal) → Add+LayerNorm → Transformer → logits.  
-- **ConvNeXtTinyGRU** — two independent ConvNeXt-Tiny encoders (60% frozen) → concatenation on feature dim → 1-layer GRU → FC.  
+- **GestFormerFusion**   two independent EfficientNet-B0 encoders (RGB + Thermal) → bidirectional cross-modal attention (RGB↔Thermal) → Add+LayerNorm → Transformer → logits.  
+- **ConvNeXtTinyGRU**   two independent ConvNeXt-Tiny encoders (60% frozen) → concatenation on feature dim → 1-layer GRU → FC.  
 - Input: 6-channel tensor `[6, T, H, W]` (channels 0–2 = primary, 3–5 = thermal).  
 - Runs all 21 protocols × 2 fusion types × 2 models = 84 experiment runs.  
 - Includes skip-if-done caching, OOM-retry, and per-run JSON metrics.  
@@ -229,7 +229,7 @@ python fusion_modelB.py
 
 ---
 
-### PHASE 6 — Day/Night Robustness Experiments
+### PHASE 6   Day/Night Robustness Experiments
 
 #### `day_night_final.py`
 **Purpose:** Train and test both models under varying lighting conditions.  
@@ -248,7 +248,7 @@ python day_night_final.py
 
 ---
 
-### PHASE 7 — Cross-Modality Testing
+### PHASE 7   Cross-Modality Testing
 
 #### `testing_rgb.py`
 **Purpose:** Load a trained thermal CNN-LSTM model and evaluate it on RGB test data.  
@@ -276,12 +276,12 @@ python testing_rgb_gru1.py
 
 ---
 
-### PHASE 8 — Result Aggregation & Figures
+### PHASE 8   Result Aggregation & Figures
 
 #### `10_intermediate_report_result_collector.ipynb`
 **Purpose:** Aggregate raw experiment CSVs into a unified results table.  
 - Reads outputs from `Pre_train_model.py`, `all_lstm_final.py`, `all_gru.py`, `modelB.py`.  
-- Produces `all_experiment_results-1.csv` — master comparison table.  
+- Produces `all_experiment_results-1.csv`   master comparison table.  
 - Generates preliminary bar charts and heatmaps for the intermediate report.
 
 #### `10_paper_figures.ipynb`
@@ -300,8 +300,8 @@ python testing_rgb_gru1.py
 | `results_lstm.csv` | CNN-LSTM sweep (525 runs) |
 | `results_gru.csv` | CNN-GRU sweep (525 runs) |
 | `dn_results_intermediate.csv` | Day/night experiment rolling results |
-| `convnext_gru_fusion_master.csv` | Fusion results — ConvNeXtTinyGRU |
-| `gestformer_fusion_master.csv` | Fusion results — GestFormerFusion |
+| `convnext_gru_fusion_master.csv` | Fusion results   ConvNeXtTinyGRU |
+| `gestformer_fusion_master.csv` | Fusion results   GestFormerFusion |
 | `combined_all_models.csv` | All models combined for paper comparison |
 | `all_experiment_results-1.csv` | Master aggregated results file |
 
