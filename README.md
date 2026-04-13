@@ -1,7 +1,6 @@
 #  Gesture Recognition   RGB + Thermal Dual-Modality Pipeline
 
-A complete research pipeline for **multi-modality hand gesture recognition** using paired RGB and thermal video data captured at three distances (4 ft, 6 ft, 8 ft) and across day/night conditions. The pipeline covers everything from raw data auditing to fusion model training, result collection, and paper-ready figures.
-
+A complete research pipeline for **multi-modality hand gesture recognition** using paired RGB and thermal video data captured at three distances (4 ft, 6 ft, 8 ft) and across day/night conditions. 
 **7 gesture classes:** `doctor`, `emergency`, `fire`, `help`, `robbery`, `sit_down`, `stand_up`  
 **Modalities:** RGB · Thermal · RGB-Background-Removed (RGB_BGREM)  
 **Models:** CNN-LSTM · CNN-GRU · GestFormerFusion · ConvNeXtTinyGRU  
