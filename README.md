@@ -26,7 +26,7 @@ Gesture_Recognition/
 │   ├── 10_paper_figures.ipynb
 │   └── rgb_train_thermaltest.ipynb
 │
-├── 🐍 Python Scripts (training / evaluation / splitting)
+├──  Python Scripts (training / evaluation / splitting)
 │   ├── splitB-1.py
 │   ├── fusion_splitB.py  /  fusion_splitB-1.py
 │   ├── Pre_train_model.py
