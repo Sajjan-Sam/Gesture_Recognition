@@ -1,0 +1,21 @@
+Family,Input,4ft,6ft,8ft,Mean,PlotLabel
+Frame-level RGB,ConvNeXt / RGB,95.0,98.0,94.0,95.7,"Frame-level RGB
+(ConvNeXt / RGB)"
+Frame-level RGB,EffNet / RGB,93.3,96.3,93.6,94.4,"Frame-level RGB
+(EffNet / RGB)"
+Frame-level BGREM,ConvNeXt / BGREM,95.0,91.4,88.7,91.7,"Frame-level BGREM
+(ConvNeXt / BGREM)"
+RGB→Thermal (zero-shot),ConvNeXt cross,47.9,46.9,27.8,40.9,"RGB→Thermal (zero-shot)
+(ConvNeXt cross)"
+CNN+LSTM,ViT-B/16 / Thermal,81.6,73.2,75.0,76.6,"CNN+LSTM
+(ViT-B/16 / Thermal)"
+CNN+GRU,ConvNeXt / Thermal,81.6,75.0,83.9,80.2,"CNN+GRU
+(ConvNeXt / Thermal)"
+GestFormer,EffNet / Thermal,97.1,98.0,98.5,97.9,"GestFormer
+(EffNet / Thermal)"
+VideoMAE (best),EffNet / BGREM,24.0,25.7,19.2,23.0,"VideoMAE (best)
+(EffNet / BGREM)"
+GF-Fusion,BGREM+Thermal EffNet dual,97.5,99.6,99.6,98.9,"GF-Fusion
+(BGREM+Thermal EffNet dual)"
+CX-Fusion,BGREM+Thermal ConvNeXt dual,96.2,99.6,100.0,98.6,"CX-Fusion
+(BGREM+Thermal ConvNeXt dual)"

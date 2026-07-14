@@ -1,0 +1,6 @@
+Model Family,Mean Accuracy
+CNN,0.0
+CNN+RNN,0.0
+3D CNN,0.0
+Transformer,0.0
+Fusion Model,0.0
